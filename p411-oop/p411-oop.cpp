@@ -9,7 +9,7 @@ protected:
     string dateOfBirth;
     string passportNumber;
 public:
-    Passport(const string& name, const string& birth, const string& num)
+    Passport(const string name, const string birth, const string num)
         : fullName(name), dateOfBirth(birth), passportNumber(num) {
     }
     virtual void display() const {
@@ -23,11 +23,11 @@ private:
     string foreignNumber;
     vector<string> visas;
 public:
-    ForeignPassport(const string& name, const string& birth,
-        const string& num, const string& fNum)
+    ForeignPassport(const string name, const string birth,
+        const string num, const string& fNum)
         : Passport(name, birth, num), foreignNumber(fNum) {
     }
-    void addVisa(const string& visa) {
+    void addVisa(const string visa) {
         visas.push_back(visa);
     }
     void display() const override {
@@ -35,7 +35,7 @@ public:
         cout << "Foreign Passport: " << foreignNumber << "\nVisas: ";
         for (const auto& v : visas) cout << v << " ";
         cout << endl;
-    }+
+    }
 };
 
 int main() {
