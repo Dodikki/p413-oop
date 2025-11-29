@@ -4,13 +4,13 @@ class Employer {
 protected:
 	std::string name;
 	int year;
-    std::string lastname;
+	std::string lastname;
 
 public:
 	Employer(std::string n, std::string l, int y) : name(n), lastname(l), year(y) {}
 
 	virtual void Print() const = 0;
-		
+
 
 };
 
@@ -19,11 +19,11 @@ class Prisident : Employer {
 private:
 	std::string role;
 public:
-	Prisident(std::string r, std::string n, std::string l, int y) :Employer(n,l,y),role(r){}
+	Prisident(std::string r, std::string n, std::string l, int y) :Employer(n, l, y), role(r) {}
 
-	void Print() const override  {
+	void Print() const override {
 		std::cout << "Role : " << role << "\n"
-			<<"Name: " << name << "\n"
+			<< "Name: " << name << "\n"
 			<< "Lastname: " << lastname << "\n"
 			<< "Year: " << year << std::endl;
 	}
